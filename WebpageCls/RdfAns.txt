@@ -1,0 +1,111 @@
+The Plain Text Method:
+直接通过爬虫读取网页纯文本后数据
+Accuracy score: 0.783
+              precision    recall  f1-score   support
+
+           0       0.95      0.52      0.67       141
+           1       0.00      0.00      0.00        10
+           2       0.95      0.67      0.78       130
+           3       0.75      0.98      0.85       778
+           4       1.00      0.03      0.06        67
+           5       0.00      0.00      0.00        12
+           6       0.84      0.51      0.64       137
+
+    accuracy                           0.78      1275
+   macro avg       0.64      0.39      0.43      1275
+weighted avg       0.80      0.78      0.75      1275
+
+
+The StopWords Text Method:
+基于纯文本无关词和基本语义筛选后的文本数据：
+
+Accuracy score: 0.773
+              precision    recall  f1-score   support
+
+           0       0.89      0.73      0.80       186
+           1       1.00      0.30      0.46        37
+           2       0.87      0.79      0.83       225
+           3       0.72      0.93      0.81       753
+           4       0.67      0.04      0.07       101
+           5       0.33      0.04      0.07        27
+           6       0.81      0.77      0.79       328
+
+    accuracy                           0.77      1657
+   macro avg       0.76      0.51      0.55      1657
+weighted avg       0.78      0.77      0.74      1657
+
+
+N-gram + length 二元和三元特征提取并加入长度特征后的数据:
+
+Accuracy score: 0.814
+              precision    recall  f1-score   support
+
+      course       0.87      0.83      0.85       186
+  department       0.93      0.68      0.78        37
+     faculty       0.81      0.85      0.83       225
+       other       0.82      0.90      0.86       753
+     project       0.81      0.29      0.42       101
+       staff       1.00      0.04      0.07        27
+     student       0.76      0.83      0.79       328
+
+    accuracy                           0.81      1657
+   macro avg       0.86      0.63      0.66      1657
+weighted avg       0.82      0.81      0.80      1657
+
+
+自己编写的训练级随机森林效果（8小时，欠拟合全部预测为特征数量最多的other类）
+…………
+The 25th tree is trained done...
+Accuracy score: 0.454
+              precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00       185
+           1       0.00      0.00      0.00        36
+           2       0.00      0.00      0.00       223
+           3       0.45      1.00      0.62       747
+           4       0.00      0.00      0.00       100
+           5       0.00      0.00      0.00        27
+           6       0.00      0.00      0.00       327
+
+    accuracy                           0.45      1645
+   macro avg       0.06      0.14      0.09      1645
+weighted avg       0.21      0.45      0.28      1645
+
+
+网格搜索寻找k折验证最佳k值和随机森林树桩个数法：
+n_estimators:树桩个数
+topk_k: 最佳k折值
+Best Parameters
+{'rforest__n_estimators': 100, 'topk__k': 1000}
+Accuracy score: 0.865
+F1-score: 0.846
+              precision    recall  f1-score   support
+
+           0       0.79      0.79      0.79        85
+           1       0.00      0.00      0.00         1
+           2       0.84      0.88      0.86        42
+           3       0.88      0.96      0.92       942
+           4       0.00      0.00      0.00        25
+           5       0.00      0.00      0.00        12
+           6       0.81      0.54      0.65       156
+
+    accuracy                           0.87      1263
+   macro avg       0.47      0.45      0.46      1263
+weighted avg       0.84      0.87      0.85      1263
+
+
+PCA降维处理数据后的处理效果
+
+              precision    recall  f1-score   support
+
+           0       0.34      0.76      0.47        85
+           1       0.07      1.00      0.13         1
+           2       0.00      0.00      0.00        42
+           3       0.81      0.68      0.74       942
+           4       0.00      0.00      0.00        25
+           5       0.00      0.00      0.00        12
+           6       0.28      0.47      0.35       156
+
+    accuracy                           0.62      1263
+   macro avg       0.21      0.42      0.24      1263
+weighted avg       0.66      0.62      0.63      1263

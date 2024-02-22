@@ -1,0 +1,65 @@
+
+Non_Linear 非线性核函数
+
+The Plain Text Method:
+直接通过爬虫读取网页纯文本后数据
+
+
+Accuracy score: 0.775
+              precision    recall  f1-score   support
+
+           0       0.89      0.67      0.76       197
+           1       1.00      0.07      0.13        14
+           2       0.88      0.61      0.72       183
+           3       0.75      0.97      0.84      1089
+           4       1.00      0.04      0.08        94
+           5       0.00      0.00      0.00        16
+           6       0.81      0.43      0.56       192
+
+    accuracy                           0.77      1785
+   macro avg       0.76      0.40      0.44      1785
+weighted avg       0.79      0.77      0.74      1785
+
+
+进程已结束,退出代码0
+
+
+
+The StopWords Text Method:
+基于纯文本无关词和基本语义筛选后的文本数据：
+（Random split）
+
+Accuracy score: 0.773
+              precision    recall  f1-score   support
+
+           0       0.85      0.75      0.80       186
+           1       0.96      0.59      0.73        37
+           2       0.88      0.72      0.79       225
+           3       0.72      0.90      0.80       753
+           4       0.75      0.21      0.33       101
+           5       1.00      0.04      0.07        27
+           6       0.83      0.78      0.80       328
+
+    accuracy                           0.77      1657
+   macro avg       0.85      0.57      0.62      1657
+weighted avg       0.79      0.77      0.76      1657
+
+
+
+SVM 类 500折验证StopText:
+不适用，正例样本少
+Accuracy score: 0.454
+
+              precision    recall  f1-score   support
+
+      course       0.00      0.00      0.00       186
+  department       0.00      0.00      0.00        37
+     faculty       0.00      0.00      0.00       225
+       other       0.45      1.00      0.62       753
+     project       0.00      0.00      0.00       101
+       staff       0.00      0.00      0.00        27
+     student       0.00      0.00      0.00       328
+
+    accuracy                           0.45      1657
+   macro avg       0.06      0.14      0.09      1657
+weighted avg       0.21      0.45      0.28      1657

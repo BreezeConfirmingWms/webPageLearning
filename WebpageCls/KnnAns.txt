@@ -1,0 +1,70 @@
+Would you like to select training?
+Please input yes or no
+yes
+Please select the model from{svm1,svm2,xgb,rf,bayes,knn}
+knn
+Would you like to specify the school website to visited?
+Please input yes or no
+no
+model is loading...
+Accuracy score: 0.476
+              precision    recall  f1-score   support
+
+      course       0.45      0.08      0.13       186
+  department       0.00      0.00      0.00        37
+     faculty       0.44      0.11      0.17       225
+       other       0.48      0.95      0.63       753
+     project       0.29      0.04      0.07       101
+       staff       0.00      0.00      0.00        27
+     student       0.53      0.10      0.17       328
+
+    accuracy                           0.48      1657
+   macro avg       0.31      0.18      0.17      1657
+weighted avg       0.45      0.48      0.36      1657
+
+model loading complete!
+please select the type of web you like to visit
+from{course,department,faculty,other,project,staff,student}
+
+student
+
+If you choose to use gnn to optimize ans?
+Please input yes or no
+
+
+yes
+
+
+
+No
+82
+Accuracy score is optimized from 0.476 to 0.521
+              precision    recall  f1-score   support
+
+      course       0.44      0.08      0.13       186
+  department       0.00      0.00      0.00        37
+     faculty       0.53      0.15      0.24       225
+       other       0.50      0.94      0.65       753
+     project       0.52      0.11      0.18       101
+       staff       1.00      0.19      0.31        27
+     student       0.76      0.27      0.40       328
+
+    accuracy                           0.52      1657
+   macro avg       0.54      0.25      0.27      1657
+weighted avg       0.55      0.52      0.44      1657
+
+1168                  http://cis.csuohio.edu/~fadlalla
+7219       http://www.cs.caltech.edu/~penzes/pali.html
+8253    http://www.cs.wisc.edu/~subbarao/subbarao.html
+7463             http://www.cs.rochester.edu/u/galescu
+8004          http://www.cs.washington.edu/homes/anhai
+Name: URL, dtype: object
+The actual ans of search  is below:
+1168    faculty
+7219    student
+8253    student
+7463    student
+8004    student
+Name: True_type, dtype: object
+
+进程已结束,退出代码0

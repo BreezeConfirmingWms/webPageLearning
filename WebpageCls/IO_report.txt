@@ -1,0 +1,71 @@
+Would you like to select training?
+Please input yes or no
+yes
+Please select the model from{svm1,svm2,xgb,rf,bayes,knn}
+xgb
+Would you like to specify the school website to visited?
+Please input yes or no
+yes
+please select your destination from:{ cornell,misc,texas,wisconsin,washington}
+wisconsin
+model is loading...
+
+Accuracy score: 0.837
+              precision    recall  f1-score   support
+
+      course       0.60      0.94      0.73        85
+  department       0.14      1.00      0.25         1
+     faculty       0.60      0.90      0.72        42
+       other       0.92      0.88      0.90       941
+     project       0.35      0.44      0.39        25
+       staff       1.00      0.08      0.15        12
+     student       0.77      0.64      0.70       154
+
+    accuracy                           0.84      1260
+   macro avg       0.63      0.70      0.55      1260
+weighted avg       0.86      0.84      0.84      1260
+
+model loading complete!
+please select the type of web you like to visit
+from{course,department,faculty,other,project,staff,student}
+student
+
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  test["pred"]=predicted
+If you choose to use gnn to optimize ans?
+Please input yes or no
+yes
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  isetter(loc, value)
+No
+69
+Accuracy score is optimized from 0.837 to 0.877
+              precision    recall  f1-score   support
+
+      course       0.60      0.94      0.73        85
+  department       0.00      0.00      0.00         1
+     faculty       0.65      0.93      0.76        42
+       other       0.97      0.88      0.92       941
+     project       0.48      0.80      0.60        25
+       staff       1.00      0.83      0.91        12
+     student       0.83      0.84      0.84       154
+
+    accuracy                           0.88      1260
+   macro avg       0.65      0.75      0.68      1260
+weighted avg       0.91      0.88      0.89      1260
+
+2316          http://www.cs.wisc.edu/~reps/reps.html
+5361                   http://showroom.doit.wisc.edu
+5483    http://www.cs.wisc.edu/~andyt/bookmarks.html
+5649       http://www.cs.wisc.edu/~cs/clarifications
+5763     http://www.cs.wisc.edu/~finton/contact.html
+Name: URL, dtype: object
+The actual ans of search  is below:
+2316    faculty
+5361      other
+5483      other
+5649      other
+5763      other
+Name: True_type, dtype: object
